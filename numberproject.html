@@ -1,0 +1,36 @@
+<h1>Guess the Number from 1 to 10</h1>
+
+<input type="number" id="inputnum">
+
+<button onclick="generaterandom()">Check</button>
+
+<p id="answer">You are wrong!</p>
+
+<p id="score">You score: 10</p>
+
+<script>
+    var scorenum = 10
+    var inputnum = document.getElementById("inputnum")
+    var answer = document.getElementById("answer")
+    var score = document.getElementById("score")
+
+    function generaterandom(){
+        var a = Math.random()
+        var num = Math.floor(a*10)+1
+        console.log(num)
+
+        if(inputnum.value == num){
+            console.log("equal");
+            answer.textContent = "You are right!"
+            score.textContent = `Your score is: ${++scorenum}`
+            alert("You won!!!!")
+        }else{
+            console.log("not equal");
+            answer.textContent = "You are wrong!"
+            score.textContent = `Your score is: ${--scorenum}`
+            if(scorenum==0){
+            }
+        }
+        inputnum.value = 0
+    }
+</script>
